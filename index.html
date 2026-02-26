@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Preload critical resources -->
+  <link rel="preload" href="./css/style.min.css" as="style">
+  <link rel="preload" href="./img/hero-bg.png" as="image">
+  <!-- css -->
+  <link rel="stylesheet" href="./css/style.min.css">
+  <!-- reset -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <!-- roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wdth,wght@75..100,100..900&display=swap&font-display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Telegraph Landing page</title>
+</head>
+
+<body>
+  <!-- svg -->
+  <svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="android" width="40" height="48" fill="none">
+      <path fill="#FF0043"
+        d="M3.062 15.98a2.994 2.994 0 0 0-2.994 2.994v13.973a2.994 2.994 0 0 0 5.988 0V18.974a2.994 2.994 0 0 0-2.994-2.994ZM36.996 15.98A2.994 2.994 0 0 0 34 18.974v13.973a2.994 2.994 0 1 0 5.989 0V18.974a2.994 2.994 0 0 0-2.994-2.994ZM31.007 15.98H9.05a.998.998 0 0 0-.998.998v15.969a4.99 4.99 0 0 0 3.992 4.89v7.086a2.994 2.994 0 1 0 5.989 0v-6.986h3.992v6.986a2.994 2.994 0 0 0 5.988 0v-7.086a4.99 4.99 0 0 0 3.993-4.89V16.978a.998.998 0 0 0-.999-.998ZM27.285 4.147l2.433-2.431A.998.998 0 1 0 28.307.305l-2.835 2.834a13.66 13.66 0 0 0-10.884 0L11.753.303a.998.998 0 0 0-1.411 1.41l2.431 2.434a10.533 10.533 0 0 0-4.72 8.839c0 .551.446.998.997.998h21.958a.998.998 0 0 0 .998-.998 10.534 10.534 0 0 0-4.721-8.839Z" />
+      <circle cx="15.039" cy="8.994" r=".998" fill="#FAFAFA" />
+      <circle cx="25.019" cy="8.994" r=".998" fill="#FAFAFA" />
+    </symbol>
+    <symbol id="iphone" width="39" height="48" fill="none">
+      <path fill="#FF0043" fill-rule="evenodd"
+        d="M22.363 10.468c-.929.37-1.894.563-2.898.536-.191-.003-.264-.053-.275-.255-.156-1.9.353-3.638 1.27-5.276C22.024 2.677 24.405.951 27.5.192a7.09 7.09 0 0 1 .826-.139c.126-.016.256-.033.39-.053.004.127.01.247.016.364.008.175.016.342.02.508.066 3.43-2.15 7.913-6.389 9.596Zm16.041 24.895c.05-.145.098-.288.147-.427-3.746-1.864-6.032-4.736-6.316-8.981-.281-4.243 1.656-7.376 5.059-9.748a5.194 5.194 0 0 0-.09-.132l-.013-.019c-1.349-1.893-3.136-3.193-5.332-3.928a11.884 11.884 0 0 0-4.773-.599c-1.09.087-2.136.394-3.164.768-1.003.372-2.003.752-3.001 1.134-.903.345-1.8.345-2.702.006-.978-.366-1.956-.736-2.93-1.109-1.852-.713-3.742-.9-5.684-.443-3.23.756-5.684 2.59-7.424 5.388C.794 19.5.19 21.971.038 24.565c-.13 2.164.083 4.299.528 6.416 1.033 4.924 3.173 9.32 6.361 13.208.674.819 1.394 1.592 2.251 2.227.69.51 1.435.907 2.285 1.065.975.184 1.932.059 2.855-.25.555-.187 1.098-.41 1.64-.632.236-.097.471-.193.708-.287 2.167-.856 4.357-.961 6.56-.161.44.16.87.344 1.302.528.234.1.469.2.705.297a6.972 6.972 0 0 0 2.881.525c1.33-.046 2.479-.557 3.477-1.402a11.16 11.16 0 0 0 1.415-1.391c2.176-2.603 3.97-5.443 5.15-8.641.089-.235.17-.472.248-.704Z"
+        clip-rule="evenodd" />
+    </symbol>
+    <symbol id="mac" width="43" height="43" fill="none">
+      <path fill="#FFE7ED"
+        d="M43 6.726v29.562a1.33 1.33 0 0 1-1.344 1.344h-17.28c-.511-4.784-.054-12.228 1.155-14.781H17.47c0-5.617 2.607-12.766 5.24-17.469h18.947A1.33 1.33 0 0 1 43 6.726Z" />
+      <path fill="#FFE7ED"
+        d="M24.376 37.632H1.344A1.33 1.33 0 0 1 0 36.288V6.726a1.33 1.33 0 0 1 1.344-1.344h21.365c-2.633 4.703-5.24 11.852-5.24 17.469h8.062c-1.21 2.553-1.666 9.997-1.155 14.781Z" />
+      <path fill="#FF0043"
+        d="M25.496 42.994c-.33 0-.658-.124-.916-.382-2.247-2.247-2.15-13.123-.887-18.418h-6.224a1.344 1.344 0 0 1-1.344-1.343c0-8.12 5.05-19.044 8.455-22.452a1.345 1.345 0 0 1 1.9 1.9c-2.537 2.54-7.098 11.815-7.62 19.208h6.671c.46 0 .887.234 1.134.62.248.39.28.877.084 1.29-1.648 3.524-1.583 15.836-.266 17.298.489.54.478 1.397-.051 1.897a1.355 1.355 0 0 1-.936.382Z" />
+      <path fill="#FF0043"
+        d="M21.5 32.257c-2.559 0-7.205-.728-12.572-2.776a1.343 1.343 0 0 1-.777-1.734 1.336 1.336 0 0 1 1.736-.776c5.031 1.919 9.401 2.599 11.613 2.599 2.212 0 6.582-.68 11.615-2.6a1.336 1.336 0 0 1 1.734.777c.266.694-.08 1.47-.777 1.734-5.367 2.048-10.014 2.776-12.572 2.776ZM12.094 16.132a1.344 1.344 0 0 1-1.344-1.344v-2.687a1.344 1.344 0 0 1 2.688 0v2.687c0 .742-.603 1.344-1.344 1.344ZM28.219 16.132a1.344 1.344 0 0 1-1.344-1.344v-2.687a1.344 1.344 0 0 1 2.688 0v2.687c0 .742-.602 1.344-1.344 1.344Z" />
+    </symbol>
+    <symbol id="win" width="41" height="38" fill="none">
+      <path fill="#FF0043"
+        d="M17.637 17.637V2.834L0 5.04v12.598h17.637ZM20.156 17.637h20.157V0L20.155 2.52v15.117ZM20.156 20.156v15.117l20.157 2.52V20.156H20.155ZM17.637 20.156H0v12.598l17.637 2.205V20.155Z" />
+    </symbol>
+    <symbol id="download" width="21" height="20" fill="none">
+      <path fill="#FF0043"
+        d="M16.953 5.285a6.568 6.568 0 0 0-12.881-.004 4.598 4.598 0 0 0 .53 9.165h3.283a.657.657 0 0 0 0-1.313H4.601a3.284 3.284 0 0 1 .039-6.568.657.657 0 0 0 .653-.585 5.254 5.254 0 0 1 10.439 0 .696.696 0 0 0 .691.585 3.284 3.284 0 1 1 0 6.567H13.14a.657.657 0 1 0 0 1.314h3.284a4.598 4.598 0 0 0 .53-9.16Z" />
+      <path fill="#FF0043"
+        d="m12.834 15.793-1.665 1.665V9.192a.657.657 0 1 0-1.314 0v8.266L8.19 15.793a.657.657 0 1 0-.928.928l2.785 2.786a.658.658 0 0 0 .93 0l2.785-2.786a.657.657 0 1 0-.928-.928Z" />
+    </symbol>
+    <symbol id="check" width="42" height="48" fill="none">
+      <path fill="#FF0043"
+        d="M41.209 6.03 21.247.042a.999.999 0 0 0-.572 0L.714 6.03A.998.998 0 0 0 0 6.986v21.958c0 8.824 13.458 16.675 20.664 18.919a1 1 0 0 0 .599 0c7.197-2.244 20.655-10.095 20.655-18.92V6.987c0-.44-.289-.829-.71-.956Z" />
+      <path fill="#FAFAFA"
+        d="M18.964 31.938a.997.997 0 0 1-.707-.292l-7.984-7.984a.998.998 0 0 1 1.411-1.411l7.28 7.277L32.23 16.262a.998.998 0 1 1 1.411 1.412L19.67 31.645a.998.998 0 0 1-.705.292Z" />
+    </symbol>
+    <symbol id="share" width="37" height="48" fill="none">
+      <path fill="#FF0043"
+        d="M36.563 9.844v36.75c0 .787-.62 1.406-1.407 1.406H1.406A1.392 1.392 0 0 1 0 46.594V1.406C0 .62.619 0 1.406 0h22.5l2.813 4.922 2.812 2.11 7.032 2.812Z" />
+      <path fill="#D30037"
+        d="M36 8.719 24.75.28C24.497.112 24.216 0 23.906 0v8.438c0 .776.63 1.406 1.407 1.406h11.25c0-.45-.197-.872-.563-1.125Z" />
+      <path fill="#fff"
+        d="M13.848 27.378a1.406 1.406 0 0 1 .448-1.938l6.482-4.048a1.406 1.406 0 0 1 1.489 2.387l-6.482 4.048a1.406 1.406 0 0 1-1.937-.45ZM20.778 34.858l-6.482-4.048a1.406 1.406 0 0 1 1.489-2.387l6.482 4.049a1.406 1.406 0 0 1-1.489 2.386Z" />
+      <path fill="#fff"
+        d="M12.656 32.344a4.223 4.223 0 0 1-4.219-4.219 4.223 4.223 0 0 1 4.22-4.219 4.223 4.223 0 0 1 4.218 4.219 4.223 4.223 0 0 1-4.219 4.219ZM23.906 25.313a4.223 4.223 0 0 1-4.218-4.22 4.223 4.223 0 0 1 4.218-4.218 4.223 4.223 0 0 1 4.219 4.219 4.223 4.223 0 0 1-4.219 4.218ZM23.906 39.375a4.223 4.223 0 0 1-4.218-4.219 4.223 4.223 0 0 1 4.218-4.218 4.223 4.223 0 0 1 4.219 4.218 4.223 4.223 0 0 1-4.219 4.219Z" />
+    </symbol>
+    <symbol id="message" width="48" height="46" fill="none">
+      <path fill="#FF0043"
+        d="M23.793.397C10.673.397 0 10.003 0 21.81c0 4.128 1.306 8.126 3.782 11.583-.47 5.184-1.725 9.033-3.55 10.857a.793.793 0 0 0 .671 1.346c.322-.046 7.783-1.12 13.18-4.235 3.065 1.237 6.33 1.863 9.71 1.863 13.12 0 23.793-9.606 23.793-21.414C47.586 10.003 36.913.397 23.793.397Z" />
+      <path fill="#fff"
+        d="M12.69 24.983a3.176 3.176 0 0 1-3.173-3.173 3.176 3.176 0 0 1 3.173-3.172 3.176 3.176 0 0 1 3.172 3.172 3.176 3.176 0 0 1-3.172 3.173ZM23.793 24.983a3.176 3.176 0 0 1-3.172-3.173 3.176 3.176 0 0 1 3.172-3.172 3.176 3.176 0 0 1 3.172 3.172 3.176 3.176 0 0 1-3.172 3.173ZM34.897 24.983a3.176 3.176 0 0 1-3.173-3.173 3.176 3.176 0 0 1 3.173-3.172 3.176 3.176 0 0 1 3.172 3.172 3.176 3.176 0 0 1-3.172 3.173Z" />
+    </symbol>
+  </svg>
+  <!-- Header Component -->
+  <!-- Logo and navigation with CTA button -->
+  <header>
+    <div class="container">
+      <a class="logo">Telegraph</a>
+      <a href="#">Try Beta</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section Component -->
+    <!-- Main landing section with title, description, and primary CTA -->
+    <section class="hero">
+      <div class="container">
+        <article class="hero-content">
+          <h1>Simple. Secure. Reliable messaging.</h1>
+          <p>
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The
+            point of using Lorem Ipsum.
+          </p>
+          <a class="btn">Request For Early Access</a>
+        </article>
+        <div class="hero-image">
+          <img src="./img/hero-bg.png" alt="hero" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Devices Section Component -->
+    <!-- Platform availability cards showing supported devices -->
+    <section class="devices-services">
+      <div class="container">
+        <ul class="devices-list">
+          <li>
+            <div class="card">
+              <svg width="40" height="48">
+                <use href="#android"></use>
+              </svg>
+              <div class="card-content">
+                <h3>MacOS</h3>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting.
+                </p>
+              </div>
+              <div class="links">
+                <a href="#">Try Beta For Free</a>
+                <a href="#"><svg width="20" height="20">
+                    <use href="#download"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <svg width="40" height="48">
+                <use href="#iphone"></use>
+              </svg>
+              <div class="card-content">
+                <h3>Iphone</h3>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting.
+                </p>
+              </div>
+              <div class="links">
+                <a href="#">Try Beta For Free</a>
+                <a href="#"><svg width="20" height="20">
+                    <use href="#download"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <div class="device-img-wrapper">
+                <svg width="40" height="48">
+                  <use href="#android"></use>
+                </svg>
+                <svg width="40" height="40">
+                  <use href="#win"></use>
+                </svg>
+              </div>
+              <div class="card-content">
+                <h3>MacOS</h3>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting.
+                </p>
+              </div>
+              <div class="links">
+                <a href="#">Try Beta For Free</a>
+                <a href="#"><svg width="20" height="20">
+                    <use href="#download"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About Section Component -->
+    <!-- Company/team information with chat simulation overlay -->
+    <section class="about">
+      <div class="container">
+        <div class="img-wrapper">
+          <img src="./img/person.jpg" alt="" width="370" height="480" loading="lazy" />
+          <ul class="commits">
+            <li>
+              <div class="card">
+                <img src="./img/avatars/img.jpg" alt="" width="60" height="60" />
+                <div class="card-content">
+                  <h3>Wife</h3>
+                  <p>It is a long established fact that a…</p>
+                </div>
+                <div class="about-avatar">
+                  <data value="11:39 PM">11:39</data>
+                  <strong>10</strong>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="./img/avatars/img2.jpg" alt="" width="60" height="60" />
+                <div class="card-content">
+                  <h3>Girlfriend</h3>
+                  <p>It is a long established fact that a…</p>
+                </div>
+                <div class="about-avatar">
+                  <data value="11:39 PM">11:39</data>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="./img/avatars/img3.jpg" alt="" width="60" height="60" />
+                <div class="card-content">
+                  <h3>Unknown Girl</h3>
+                  <p>It is a long established fact that a…</p>
+                </div>
+                <div class="about-avatar">
+                  <data value="11:39 PM">11:39</data>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="about-content">
+          <h2>Simple, Personal, Real Time Messaging</h2>
+          <p>
+            There are many variations of passages of Lorem Ipsum available,
+            but the majority have suffered alteration in some form, by
+            injected humour, or randomised words which don't look even
+            slightly believable.<br />If you are going to use a passage of
+            Lorem Ipsum, you need to be sure there isn't anything.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section Component -->
+    <!-- Key features showcase with grid layout -->
+    <section class="features">
+      <div class="container">
+        <div class="features-content">
+          <h2>Sharing Cool Stuff With Your Community</h2>
+          <p>
+            There are many variations of passages of Lorem Ipsum available,
+            but the majority have suffered alteration in some form, by
+            injected humour,<br />If you are going to use a passage of Lorem
+            Ipsum, you need to be sure there isn't anything.
+          </p>
+        </div>
+        <ul class="features-list">
+          <li>
+            <div class="card">
+              <div class="device-img-wrapper">
+                <svg width="42" height="48">
+                  <use href="#check"></use>
+                </svg>
+              </div>
+              <div class="card-content">
+                <h3>Wife</h3>
+                <p>
+                  It is a long established fact that a reader will be
+                  distracted by the readable content of a page when looking at
+                  its layout.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <div class="device-img-wrapper">
+                <svg width="42" height="48">
+                  <use href="#check"></use>
+                </svg>
+              </div>
+              <div class="card-content">
+                <h3>Girlfriend</h3>
+                <p>
+                  It is a long established fact that a reader will be
+                  distracted by the readable content of a page when looking at
+                  its layout.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <div class="device-img-wrapper">
+                <svg width="42" height="48">
+                  <use href="#check"></use>
+                </svg>
+              </div>
+              <div class="card-content">
+                <h3>Girlfriend</h3>
+                <p>
+                  It is a long established fact that a reader will be
+                  distracted by the readable content of a page when looking at
+                  its layout.
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Community Section Component -->
+    <!-- Community/social proof section with image overlay -->
+    <section class="community">
+      <div class="container">
+        <div class="img-wrapper">
+          <img src="./img/community.jpg" alt="" width="370" height="480" loading="lazy" />
+          <img src="./img/community-bg.png" alt="" loading="lazy" />
+        </div>
+        <div class="community-content">
+          <h2>Keep In Touch With The Groups Of People.</h2>
+          <p>
+            There are many variations of passages of Lorem Ipsum available,
+            but the majority have suffered alteration in some form, by
+            injected humour, or randomised words which don't look even
+            slightly believable.<br />If you are going to use a passage of
+            Lorem Ipsum, you need to be sure there isn't anything.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section Component -->
+    <!-- Call-to-action section with gradient background -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2 class="cta-title">Let's Start With Quick App</h2>
+        <p class="cta-description">
+          It is a long established fact that a reader will be distracted by
+          the readable content of a page when looking at its layout.
+        </p>
+        <button class="cta-button">Request For Early Access</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Component -->
+  <!-- Site footer with copyright and social links -->
+  <footer class="footer">
+    <div class="container">
+      <h6 class="footer-copyright">
+        &copy; <span>Telegraph, 2020</span> — All rights reserved.
+      </h6>
+      <ul class="footer-social">
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
+</html>
